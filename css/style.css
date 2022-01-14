@@ -4804,7 +4804,13 @@ div.wave-block:nth-child(17):after {
     -webkit-transition: 1s;
     transition: 1s;
 }
-
+.show-menu{
+    -webkit-transform: translate3d(0px, 0, 0);
+    transform: translate3d(0px, 0, 0);
+}
+.show-popup{
+    visibility: visible;
+}
 @media (max-width: 1024px) {
     .popup-dialog-menu {
         width: 549px;
@@ -4824,6 +4830,11 @@ div.wave-block:nth-child(17):after {
         -webkit-transform: translate3d(0, -100vh, 0);
         transform: translate3d(0, -100vh, 0);
         left: -5%;
+    }
+
+    .show-menu{
+        -webkit-transform: translate3d(0, 0vh, 0);
+        transform: translate3d(0, 0vh, 0);
     }
 }
 
@@ -4860,6 +4871,10 @@ div.wave-block:nth-child(17):after {
 @media (max-width: 1024px) {
     .popup-dialog-portfolio {
         height: 857px;
+    }
+    .show-menu{
+        -webkit-transform: translate3d(0, 0vh, 0);
+        transform: translate3d(0, 0, 0);
     }
 }
 
