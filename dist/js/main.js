@@ -1,1 +1,1 @@
-(()=>{"use strict";console.log("first")})();
+(()=>{"use strict";(()=>{const t=document.querySelector(".header-contacts"),e=t.querySelector(".header-contacts__phone-number-accord");t.addEventListener("click",(t=>{if(t.target.closest(".header-contacts__arrow")){const c=t.target.closest(".header-contacts__arrow");c.classList.toggle("rotate");const o=e.querySelector("a");c.classList.contains("rotate")?(e.style.top="25px",o.style.opacity="1"):(e.style.top="0px",o.style.opacity="0")}}))})()})();

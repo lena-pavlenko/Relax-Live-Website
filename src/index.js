@@ -1,3 +1,3 @@
-import first from "./modules/first";
+import headPhone from "./modules/headPhone";
 
-first();
+headPhone();
