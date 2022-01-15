@@ -2,7 +2,9 @@ import { maskPhone } from "./helper";
 
 const validate = () => {
 
-    maskPhone()
+    maskPhone();
+
+    
 }
 
 export default validate;

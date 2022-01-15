@@ -952,7 +952,9 @@ template, [hidden] {
         fill: #937E6C;
     }
 }
-
+.wrong{
+    border-bottom: 2px solid red;
+}
 .transparency-text-variable {
     color: #ffffff;
     height: 22px;
