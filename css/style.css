@@ -1329,6 +1329,23 @@ template, [hidden] {
     transform: translate3d(0, -5px, 0);
     opacity: 0.1;
 }
+.rotate-hint{
+    padding: 40px 40px 20px 40px;
+}
+
+.rotate-hint::before{
+
+    transform: rotate(180deg);
+}
+.z-i4{
+    position: relative;
+    z-index: -4;
+}
+
+.six-two:hover ~ .five-three{
+    position: relative;
+    z-index: -4;
+}
 
 .formula-item-popup p {
     padding-bottom: 15px;
@@ -7206,8 +7223,8 @@ div.wave-block:nth-child(17):after {
     -ms-flex-align: center;
     align-items: center;
     min-width: 1076px;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
+    /* -webkit-transition: 0.4s;
+    transition: 0.4s; */
 }
 
 .nav-list-repair {
