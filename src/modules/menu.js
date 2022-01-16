@@ -3,7 +3,7 @@ import { scrollSmooth } from "./helper";
 // Функционал главного меню
 const menu = () => {
     // Получаем элементы
-    const menuBtn = document.querySelector('.menu__icon');
+    const menuBtns = document.querySelectorAll('.menu__icon');
     const popup = document.querySelector('.popup-menu');
     const hiddenMenu = popup.querySelector('.popup-dialog-menu');
 
@@ -14,8 +14,10 @@ const menu = () => {
     }
 
     // Обработчик клика по бургер-меню
-    menuBtn.addEventListener('click', () => {
-        toggleMenu();
+    menuBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            toggleMenu();
+        })
     })
 
     // Обработчик клика внутри меню через делегирование

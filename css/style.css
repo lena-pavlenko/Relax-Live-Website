@@ -1156,7 +1156,30 @@ template, [hidden] {
 .formula-slider__slide .formula-item__icon__descr {
     font-size: 18px;
 }
+.formula-slider__slide.swiper-slide-active .formula-item__icon-inner{
+    opacity: 1;
+    background: -webkit-gradient(linear, left top, right top, from(#F48922), to(#FFB015));
+    background: linear-gradient(90deg, #F48922 0%, #FFB015 100%);
+}
+.formula-slider__slide.swiper-slide-active{
+    opacity: 1;
+}
+.formula-slider__slide.swiper-slide-active .formula-item-popup {
+    visibility: visible;
+    opacity: 1;
+}
+.formula-slider-wrap .swiper-button-next.swiper-button-disabled, .formula-slider-wrap .swiper-button-prev.swiper-button-disabled {
+    visibility: hidden;
+  }
 
+
+@media (max-width: 1200px) {
+    .formula-slider-wrap {
+        width: 640px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
 @media (max-width: 575px) {
     .formula-slider-wrap {
         width: 290px;
@@ -1164,6 +1187,7 @@ template, [hidden] {
         margin-right: auto;
     }
 }
+
 
 .formula .row {
     height: 100%;
@@ -4511,6 +4535,7 @@ div.wave-block:nth-child(17):after {
 @media (max-width: 575px) {
     .msg-active ~ .msg {
         max-height: 300px;
+        overflow: scroll;
     }
 
     .msg-active ~ .msg ~ .accordion-more {
@@ -5221,10 +5246,14 @@ div.wave-block:nth-child(17):after {
     border-radius: 20px !important;
 }
 
+.popup-repair-types-nav__item.active {
+    background: #b3b1b15e;
+}
+
 @media (max-width: 1024px) {
     .popup-repair-types-nav__item {
         width: 298px;
-        height: 37px;
+        height: 45px;
         padding-left: 0;
         text-align: center;
         margin-top: 0;
@@ -6621,7 +6650,9 @@ div.wave-block:nth-child(17):after {
     text-align: center;
     color: #ffffff;
 }
-
+.popup-error-content{
+    padding: 60px 0;
+}
 .popup-thank-bg {
     background: -webkit-gradient(linear, left top, right top, from(#F48922), to(#FFB015));
     background: linear-gradient(90deg, #F48922 0%, #FFB015 100%);
@@ -7041,6 +7072,10 @@ div.wave-block:nth-child(17):after {
     z-index: 5;
 }
 
+.slider-arrow.swiper-button-next::after, .slider-arrow.swiper-button-prev::after{
+    content: '';
+}
+
 @media (max-width: 575px) {
     .slider-arrow {
         width: 24px;
@@ -7260,7 +7295,7 @@ div.wave-block:nth-child(17):after {
 
 @media (max-width: 1024px) {
     .nav-list-popup-repair {
-        min-width: 3130px;
+        min-width: max-content;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -7272,7 +7307,7 @@ div.wave-block:nth-child(17):after {
 
 @media (max-width: 575px) {
     .nav-list-popup-repair {
-        min-width: 2840px;
+        min-width: max-content;
     }
 }
 
@@ -7311,7 +7346,12 @@ div.wave-block:nth-child(17):after {
     opacity: 0.5;
     pointer-events: none;
 }
-
+.swiper-button-prev, .swiper-rtl .swiper-button-next {
+    left: auto;
+}
+.swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled{
+    visibility: hidden;
+}
 @media (min-width: 1025px) {
     .nav-wrap:before {
         display: none;
@@ -8180,8 +8220,8 @@ div.wave-block:nth-child(17):after {
 
 @media (max-width: 864px) {
     #formula-arrow_left {
-        top: 42%;
-        left: 25px;
+        top: 28%;
+        left: 0px;
     }
 }
 
@@ -8193,8 +8233,8 @@ div.wave-block:nth-child(17):after {
 
 @media (max-width: 575px) {
     #formula-arrow_left {
-        left: 65px;
-        top: 50%;
+        left: 0px;
+        top: 28%;
     }
 }
 
@@ -8204,8 +8244,8 @@ div.wave-block:nth-child(17):after {
 
 @media (max-width: 864px) {
     #formula-arrow_right {
-        top: 42%;
-        right: 25px;
+        top:28%;
+        right: 0px;
     }
 }
 
@@ -8217,8 +8257,8 @@ div.wave-block:nth-child(17):after {
 
 @media (max-width: 575px) {
     #formula-arrow_right {
-        right: 65px;
-        top: 50%;
+        right: 0px;
+        top: 28%;
     }
 }
 

@@ -1,6 +1,7 @@
 const sendForm = (forms = document.querySelectorAll('form')) => {
 
     const modal = document.querySelector('.popup-thank');
+    const errorModal = document.querySelector('.popup-error');
 
     modal.addEventListener('click', (e) => {
         if (e.target.closest('.close') || !e.target.closest('.feedback-wrap')) {
@@ -68,11 +69,14 @@ const sendForm = (forms = document.querySelectorAll('form')) => {
         sendData(userData).then(data => {
             modal.style.visibility = 'visible';
             setTimeout(() => {
-                modal.style.visibility = 'hidden';
+                modal.style.visibility = '';
             }, 2000)
             form.reset();
         }).catch(error => {
-            alert('Произошла ошибка. пока что тестовое окно')
+            errorModal.style.visibility = 'visible';
+            setTimeout(() => {
+                errorModal.style.visibility = '';
+            }, 2000)
         })
     }
 

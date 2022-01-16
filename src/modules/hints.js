@@ -1,3 +1,4 @@
+import { swiperFormula } from "./swiper";
 const showHints = () => {
     const hintWrappers = document.querySelectorAll('.formula-item');
 
@@ -34,35 +35,9 @@ const showHints = () => {
             hint.style.opacity = '';
             
         })
+
+        swiperFormula('.formula-slider-wrap', '.slider-arrow_right-formula', '.slider-arrow_left-formula');
     })
-    
-
-    // hintWrappers.forEach((element, index) => {
-    //     element.addEventListener('mouseenter', (e) => {
-
-    //        const hint = e.target.querySelector('.formula-item-popup');
-    //        hint.style.visibility = 'visible';
-    //        hint.style.opacity = '1';
-
-    //        // спозиционируем его сверху от аннотируемого элемента (top-center)
-    //         let coords = e.target.getBoundingClientRect();
-
-    //         if (hint.offsetHeight > coords.top) {
-    //             hint.classList.add('rotate-hint');
-    //             hint.style.transform = `translate3d(0, ${hint.offsetHeight + e.target.offsetHeight + 80}px, 0)`
-    //         } else {
-    //             hint.classList.remove('rotate-hint');
-    //             hint.style.transform = ``
-    //         }
-    //     })
-
-    //     element.addEventListener('mouseleave', (e) => {
-
-    //         const hint = e.target.querySelector('.formula-item-popup');
-    //         hint.style.visibility = '';
-    //         hint.style.opacity = '';
-    //      })
-    // })
 }
 
 export default showHints;
