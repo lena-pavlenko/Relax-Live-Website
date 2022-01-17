@@ -1644,7 +1644,9 @@ template, [hidden] {
     border-radius: 50%;
     overflow: hidden;
 }
-
+.repair-hide{
+    display: none;
+}
 @media (max-width: 575px) {
     .repair-types-slider {
         width: 256px;
@@ -2397,6 +2399,7 @@ div.wave-block:nth-child(17):after {
 @media (max-width: 575px) {
     .transparency {
         padding-top: 65px;
+        padding-bottom: 50px;
     }
 }
 
@@ -2461,7 +2464,9 @@ div.wave-block:nth-child(17):after {
 
 @media (max-width: 1090px) {
     .transparency-slider.row {
-        display: block;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
     }
 }
 
@@ -2478,6 +2483,8 @@ div.wave-block:nth-child(17):after {
 @media (max-width: 575px) {
     .transparency-slider-wrap {
         margin-top: 20px;
+        overflow: hidden;
+        padding-bottom: 380px;
     }
 }
 
@@ -2551,6 +2558,14 @@ div.wave-block:nth-child(17):after {
 @media (max-width: 1024px) {
     .transparency-item {
         width: auto;
+        margin: 0 20px;
+        position: absolute;
+        opacity: 0;
+        transition: opacity .5s;
+    }
+
+    .transparency-item.active{
+        opacity: 1;
     }
 }
 
@@ -4178,6 +4193,9 @@ div.wave-block:nth-child(17):after {
 .reviews-slider {
     height: 314px;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    
 }
 
 .reviews-slider-wrap {
@@ -4208,7 +4226,14 @@ div.wave-block:nth-child(17):after {
     text-align: center;
     color: #322823;
     min-height: 100%;
+    position: absolute;
+    opacity: 0;
+    transition: opacity .5s;
 }
+.reviews-slider__slide.active{
+    opacity: 1;
+}
+
 
 .reviews-slider__slide-img {
     position: relative;

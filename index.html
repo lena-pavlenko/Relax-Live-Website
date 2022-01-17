@@ -346,7 +346,7 @@
 			<div class="row row_reverse">
 				<div class="repair-types-slider-wrap">
 					<div class="repair-types-slider">
-						<div class="types-repair1">
+						<div class="types-repair1 types-repair">
 							<div class="repair-types-slider__slide">
 								<img src="./images/repair-types/electro.jpg" alt="electro"></div>
 							<div class="repair-types-slider__slide">
@@ -358,7 +358,7 @@
 							<div class="repair-types-slider__slide">
 								<img src="./images/repair-types/cosmetic.jpg" alt="cosmetic"></div>
 						</div>
-						<div class="types-repair2">
+						<div class="types-repair2 types-repair">
 							<div class="repair-types-slider__slide">
 								<img src="./images/repair-types/cosmetic.jpg" alt="cosmetic"></div>
 							<div class="repair-types-slider__slide">
@@ -368,7 +368,7 @@
 							<div class="repair-types-slider__slide">
 								<img src="./images/repair-types/electro.jpg" alt="electro"></div>
 						</div>
-						<div class="types-repair3">
+						<div class="types-repair3 types-repair">
 							<div class="repair-types-slider__slide">
 								<img src="./images/repair-types/capital.jpg" alt="capital"></div>
 							<div class="repair-types-slider__slide">
@@ -376,13 +376,13 @@
 							<div class="repair-types-slider__slide">
 								<img src="./images/repair-types/capital.jpg" alt="capital"></div>
 						</div>
-						<div class="types-repair4">
+						<div class="types-repair4 types-repair">
 							<div class="repair-types-slider__slide">
 								<img src="./images/repair-types/electro.jpg" alt="electro"></div>
 							<div class="repair-types-slider__slide">
 								<img src="./images/repair-types/cosmetic.jpg" alt="cosmetic"></div>
 						</div>
-						<div class="types-repair5">
+						<div class="types-repair5 types-repair">
 							<div class="repair-types-slider__slide">
 								<img src="./images/repair-types/capital.jpg" alt="capital"></div>
 							<div class="repair-types-slider__slide">
@@ -430,7 +430,7 @@
 					<div class="nav-wrap nav-wrap-repair">
 						<nav class="nav repair-types-nav">
 							<div class="nav-list nav-list-repair">
-								<button type="button" class="button_o repair-types-nav__item repair-types-nav__item-1 active">
+								<button type="button" class="button_o repair-types-nav__item repair-types-nav__item-1 active" data-slider="types-repair1">
 									<svg width="259" height="46" fill="none" viewBox="0 0 259 46" preserveAspectRatio="xMinYMin meet">
 										<path
 												d="M33.5 1h-10c-12.15 0-22 9.85-22 22s9.85 22 22 22h187M48.5 1h187c12.15 0 22 9.85 22 22s-9.85 22-22 22h-17.1"
@@ -438,7 +438,7 @@
 									</svg>
 									Частичный ремонт
 								</button><!-- /.repair-types__nav-item -->
-								<button type="button" class="button_o repair-types-nav__item repair-types-nav__item-2">
+								<button type="button" class="button_o repair-types-nav__item repair-types-nav__item-2" data-slider="types-repair2">
 									<svg width="300" height="46" fill="none" viewBox="0 0 300 46" preserveAspectRatio="xMinYMin meet">
 										<path
 												d="M38.25 1H23C10.85 1 1 10.85 1 23s9.85 22 22 22h221.289M55.711 1H277c12.15 0 22 9.85 22 22s-9.85 22-22 22h-23.515"
@@ -446,7 +446,7 @@
 									</svg>
 									Косметический ремонт
 								</button><!-- /.repair-types__nav-item -->
-								<button type="button" class="button_o repair-types-nav__item repair-types-nav__item-3">
+								<button type="button" class="button_o repair-types-nav__item repair-types-nav__item-3" data-slider="types-repair3">
 									<svg width="281" height="46" fill="none" viewBox="0 0 281 46" preserveAspectRatio="xMinYMin meet">
 										<path
 												d="M35.875 1H23C10.85 1 1 10.85 1 23s9.85 22 22 22h205.777M52.223 1H258c12.15 0 22 9.85 22 22s-9.85 22-22 22h-20.613"
@@ -454,7 +454,7 @@
 									</svg>
 									Капитальный ремонт
 								</button><!-- /.repair-types__nav-item -->
-								<button type="button" class="button_o repair-types-nav__item repair-types-nav__item-4">
+								<button type="button" class="button_o repair-types-nav__item repair-types-nav__item-4" data-slider="types-repair4">
 									<svg width="268" height="46" fill="none" viewBox="0 0 268 46" preserveAspectRatio="xMinYMin meet">
 										<path
 												d="M34.25 1H23C10.85 1 1 10.85 1 23s9.85 22 22 22h195.164M49.836 1H245c12.15 0 22 9.85 22 22s-9.85 22-22 22h-18.627"
@@ -462,7 +462,7 @@
 									</svg>
 									Евроремонт ремонт
 								</button><!-- /.repair-types__nav-item -->
-								<button type="button" class="button_o repair-types-nav__item repair-types-nav__item-5">
+								<button type="button" class="button_o repair-types-nav__item repair-types-nav__item-5" data-slider="types-repair5">
 									<svg width="324" height="46" fill="none" viewBox="0 0 324 46" preserveAspectRatio="xMinYMin meet">
 										<path
 												d="M41.25 1H23C10.85 1 1 10.85 1 23s9.85 22 22 22h240.883M60.117 1H301c12.15 0 22 9.85 22 22s-9.85 22-22 22h-27.18"
@@ -683,7 +683,7 @@
 			<div class="section-subtitle">Никаких скрытых платежей и сорванных сроков!</div>
 			<div class="transparency-slider-wrap">
 				<div class="transparency-slider row">
-					<div class="transparency-item">
+					<div class="transparency-item active">
 						<div class="transparency-item__img">
 							<img src="./images/transparency/item_img.jpg" alt="document">
 							<div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
@@ -863,7 +863,7 @@
 				</svg>
 			</div>
 			<div class="reviews-slider">
-				<div class="reviews-slider__slide">
+				<div class="reviews-slider__slide active">
 					<div class="reviews-slider__slide-img"><img src="./images/reviews/ava1.jpg" alt=""></div>
 					<div class="reviews-slider__slide-date">05.02.2020</div>
 					<div class="reviews-slider__slide-title">Анютка Дюгурова</div>

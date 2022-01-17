@@ -7,7 +7,8 @@ import showHints from "./modules/hints";
 import accordeon from "./modules/accordeon";
 import sendForm from "./modules/sendForm";
 import repairTypes from "./modules/repairTypes";
-// import swiper from "./modules/swiper";
+import slider from "./modules/slider";
+import sliderRepair from "./modules/sliderRepair";
 
 headPhone();
 menu();
@@ -21,4 +22,6 @@ showHints();
 accordeon();
 sendForm();
 repairTypes();
-// swiper('.formula-slider-wrap', '.slider-arrow_right-formula', '.slider-arrow_left-formula');
+slider('.reviews-slider-wrap', '.reviews-slider__slide', '.slider-arrow', 'active', '#reviews-arrow_left', '#reviews-arrow_right');
+slider('.transparency-slider-wrap', '.transparency-item', '.slider-arrow', 'active', '#transparency-arrow_left', '#transparency-arrow_right');
+sliderRepair();
