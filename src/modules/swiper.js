@@ -1,7 +1,7 @@
 import Swiper from 'swiper';
 
 const swiperFormula = (sliderBox, arrowRight, arrowLeft) => {
-    const slider = document.querySelector('.swiper');
+    const slider = document.querySelector(sliderBox);
 
     if (slider) {
        const swiper = new Swiper(sliderBox, {
@@ -32,7 +32,7 @@ const swiperFormula = (sliderBox, arrowRight, arrowLeft) => {
 
 
 const swiperRepairTypes = (sliderBox, arrowRight, arrowLeft) => {
-    const slider = document.querySelector('.swiper');
+    const slider = document.querySelector(sliderBox);
 
     if (slider) {
        const swiper = new Swiper(sliderBox, {
@@ -61,4 +61,46 @@ const swiperRepairTypes = (sliderBox, arrowRight, arrowLeft) => {
     
 }
 
-export { swiperFormula, swiperRepairTypes }
+const swiperServices = (sliderBox) => {
+  const slider = document.querySelector(sliderBox);
+
+  if (slider) {
+     const swiper = new Swiper(sliderBox, {
+          // Optional parameters
+          slidesPerView: 1.6,
+          spaceBetween: 20
+      });
+  }
+  
+}
+
+const swiperRepairTypesSlider = (sliderBox, arrowRight, arrowLeft) => {
+  const slider = document.querySelector(sliderBox);
+
+  if (slider) {
+     const swiper = new Swiper(sliderBox, {
+          // Optional parameters
+          slidesPerView: 'auto',
+          spaceBetween: 30,
+          breakpoints: {
+              576: {
+                slidesPerView: 2,
+                spaceBetween: 50
+              },
+              767: {
+                slidesPerView: 'auto',
+                spaceBetween: 50,
+              },
+          },
+        
+          // Navigation arrows
+          navigation: {
+            nextEl: arrowRight,
+            prevEl: arrowLeft,
+          },
+      });
+  }
+  
+}
+
+export { swiperFormula, swiperRepairTypes, swiperServices, swiperRepairTypesSlider }

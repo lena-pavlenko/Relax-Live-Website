@@ -1,12 +1,41 @@
-const slider = (sliderClass, slidesClass, arrowClass, activeClass = 'active', navLeftId, navRightId) => {
+const slider = (
+        sliderClass, 
+        slidesClass, 
+        arrowClass = '.slider-arrow', 
+        activeClass = 'active', 
+        navLeftId, 
+        navRightId, 
+        pagination = false,
+        sliderCurrentClass,
+        sliderIndex = 0
+    ) => {
 
-   // Получение элементов со страницы
-   const sliderBlock = document.querySelector(sliderClass);
-   const sliderItems = document.querySelectorAll(slidesClass);
+    // Получение элементов со страницы
+    const sliderBlock = document.querySelector(sliderClass);
+    const sliderCurrent = document.querySelector(sliderCurrentClass);
+    const sliderItems = sliderCurrent.querySelectorAll(slidesClass);
+    let pageAll, pageCurrent, sliderPage;
 
+    if (pagination === true) {
+        pageAll = sliderBlock.querySelector('.slider-counter-content__total');
+        pageCurrent = sliderBlock.querySelector('.slider-counter-content__current');
+
+        // Пагинация
+        const sliderLength = sliderItems.length;
+        if (sliderLength > 0) {
+            pageAll.textContent = sliderLength;
+            sliderPage = 1;
+            pageCurrent.textContent = sliderIndex+1;
+        } else {
+            pageAll.textContent = '';
+            pageCurrent.textContent = '';
+        }
+    }
+   
     // Счетчик для смены слайдов
-    let sliderIndex = 0;
+    // let sliderIndex = 0;
 
+    
     // Функция для удаления активного класса
     const prevSlide = (elems, index, elemClass) => {
         elems[index].classList.remove(elemClass);
@@ -32,8 +61,24 @@ const slider = (sliderClass, slidesClass, arrowClass, activeClass = 'active', na
         // Проверяем клик
         if (e.target.closest(navRightId)) {
             sliderIndex++;
+
+            if (pagination === true) {
+                sliderPage++;
+                if (sliderPage > sliderItems.length) {
+                    sliderPage = 1;
+                }
+                pageCurrent.textContent = sliderPage
+            }
         } else if (e.target.closest(navLeftId)) {
             sliderIndex--;
+
+            if (pagination === true) {
+                sliderPage--;
+                if (sliderPage <= 0) {
+                    sliderPage = sliderItems.length;
+                }
+                pageCurrent.textContent = sliderPage;
+            }
         }
 
         // Обнуляем счетчик
@@ -49,9 +94,6 @@ const slider = (sliderClass, slidesClass, arrowClass, activeClass = 'active', na
         // Добавляем активные классы
         nextSlide(sliderItems, sliderIndex, activeClass);
     })
-
-
-    
 }
 
 export default slider;

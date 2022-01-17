@@ -37,7 +37,7 @@ const repairTypes = () => {
         buttons = buttonWrapper.querySelectorAll('.popup-repair-types-nav__item');
 
         if (window.screen.width < 1200) {
-            swiperRepairTypes('.nav-wrap-repair', '.nav-arrow_right', '.nav-arrow_left');
+            swiperRepairTypes('.nav-wrap-for-swiper', '.nav-arrow_right', '.nav-arrow_left');
         }
     }
 
