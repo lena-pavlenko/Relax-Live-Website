@@ -2,6 +2,8 @@ import { ItemService } from "../admin/src/modules/itemService";
 import getSelect from "../admin/src/modules/getSelect";
 import filterItems from "../admin/src/modules/filterItems";
 import addItems from "../admin/src/modules/addItems";
+import editItems from "../admin/src/modules/editItems";
+import removeItems from "../admin/src/modules/removeItems";
 import render from "../admin/src/modules/render";
 
 // Назначаем экземпляр класса как свойство window
@@ -16,6 +18,8 @@ itemService.getItems().then(data => {
 getSelect()
 filterItems();
 addItems();
+editItems();
+removeItems();
 
         
 

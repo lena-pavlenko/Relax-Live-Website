@@ -4,6 +4,7 @@ import { validity } from "./helpers";
 const addItems = () => {
     const btn = document.querySelector('.btn-addItem');
     const modal = document.getElementById('modal');
+    const headerModal = modal.querySelector('.modal__header');
 
     const form = document.querySelector('form');
     const inputs = form.querySelectorAll('.input');
@@ -16,6 +17,8 @@ const addItems = () => {
 
     btn.addEventListener('click', () => {
         modal.style.display = 'flex';
+        headerModal.textContent = 'Добавление новой услуги';
+        form.removeAttribute('data-item');
     })
 
     modal.addEventListener('click', (e) => {
@@ -57,7 +60,6 @@ const addItems = () => {
             itemService.addItems(item).then(() => {
                 itemService.getItems().then(items => {
                     render(items);
-                    // Чистка формы
                     form.reset();
                     setTimeout(() => {
                         modal.style.display = '';
