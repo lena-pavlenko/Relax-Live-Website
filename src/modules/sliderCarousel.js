@@ -68,7 +68,7 @@ const sliderCarousel = (sliderSectionClass, sliderWrapperClass, sliderBlockClass
             rightBtn = e.target.closest(navRightId);
             leftBtn = rightBtn.previousElementSibling;
 
-            nextSlide(1408, rightBtn, leftBtn); 
+            nextSlide(-1408, rightBtn, leftBtn); 
         }
     })
 }
