@@ -6532,14 +6532,14 @@ div.wave-block:nth-child(17):after {
     border-radius: 10px;
     overflow: hidden;
 }
-.popup-transparency-slider__slide{
+/* .popup-transparency-slider__slide{
     position: absolute;
     opacity: 0;
     transition: opacity .5s;
 }
 .popup-transparency-slider__slide.active{
     opacity: 1;
-}
+} */
 @media (max-width: 575px) {
     .popup-transparency-slider {
         border-radius: 0;

@@ -24,18 +24,14 @@ const slider = (
         const sliderLength = sliderItems.length;
         if (sliderLength > 0) {
             pageAll.textContent = sliderLength;
-            sliderPage = 1;
-            pageCurrent.textContent = sliderIndex+1;
+            sliderPage = sliderIndex + 1;
+            pageCurrent.textContent = sliderPage;
         } else {
             pageAll.textContent = '';
             pageCurrent.textContent = '';
         }
     }
    
-    // Счетчик для смены слайдов
-    // let sliderIndex = 0;
-
-    
     // Функция для удаления активного класса
     const prevSlide = (elems, index, elemClass) => {
         elems[index].classList.remove(elemClass);

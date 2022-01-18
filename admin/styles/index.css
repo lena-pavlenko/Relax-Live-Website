@@ -371,6 +371,10 @@ body {
 
 .text-warning{
     color: tomato;
+    opacity: 0;
+}
+.text-warning.active{
+    opacity: 1;
 }
 
 .label sup {
