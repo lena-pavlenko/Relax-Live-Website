@@ -506,6 +506,13 @@ body {
     display: flex;
     flex-direction: column;
 }
+.errorText{
+    opacity: 0;
+    display: block;
+    margin: 0 auto;
+    color: red;
+    text-align: center;
+}
 
 @media screen and (max-width: 1200px) {
     .th-type{

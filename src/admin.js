@@ -1,15 +1,21 @@
-import reg from "../admin/src/modules/reg";
-// import { UserService } from "../admin/src/modules/userService";
+import { ItemService } from "../admin/src/modules/itemService";
+import getSelect from "../admin/src/modules/getSelect";
+import filterItems from "../admin/src/modules/filterItems";
+import addItems from "../admin/src/modules/addItems";
+import render from "../admin/src/modules/render";
 
 // Назначаем экземпляр класса как свойство window
-// window.userService = new UserService;
+window.itemService = new ItemService;
 
-// // Получаем данные из базы и отрисовываем таблицу
-// userService.getUsers().then(data => {
-//     render(data);
-// })
+// Получаем данные из базы и отрисовываем таблицу
+itemService.getItems().then(data => {
+    render(data);
+})
 
-reg();
+
+getSelect()
+filterItems();
+addItems();
 
         
 

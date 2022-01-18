@@ -4,7 +4,8 @@ module.exports = {
     context: path.resolve(__dirname, 'src'),
     entry: {
         main: './index.js',
-        admin: './admin.js'
+        admin: './admin.js',
+        reg: './reg.js'
     },
     output: {
         filename: 'js/[name].js',

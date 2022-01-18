@@ -10,9 +10,10 @@ const repairTypes = () => {
         return fetch(url)
         .then(res => res.json(url))
         .then(data => {
+            let myArr = data['items'];
             const arrTypes = [];
 
-            data.forEach(element => {
+            myArr.forEach(element => {
                 arrTypes.push(element)
                 
             });

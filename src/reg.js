@@ -68,9 +68,8 @@ const reg = () => {
                             textWarnings[1].classList.add('active');
                             clearForm();
                         } else {
-                            console.log(newUser.name)
-                            setCookie('userName', newUser.name, {secure: true, 'max-age': 3600});
-                            setCookie('userPassword', newUser.password, {secure: true, 'max-age': 3600});
+                            setCookie('userName', newUser.name, {secure: true, 'max-age': 3600 * 24});
+                            setCookie('userPassword', newUser.password, {secure: true, 'max-age': 3600 * 24});
                             setTimeout(function(){
                                 window.location.href = '/admin/table.html';
                             }, 500);
@@ -91,7 +90,6 @@ const reg = () => {
     }
 
     let cookieName = getCookie('userName');
-    console.log()
     getData().then(data => {
         
         data.forEach(user => {
@@ -107,4 +105,5 @@ const reg = () => {
         });
     })  
 }
-export default reg;
+
+reg();
