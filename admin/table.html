@@ -7,8 +7,9 @@
 	<script src="./../dist/js/admin.js" defer></script>
 </head>
 <body>
-
-
+	<div class="loader">
+		<img src="./img/spinner.png" alt="spinner" class="loader svg__loader">
+	</div>
 	<main class="main">
 		<div id="container" class="container">
 			<h1 class="title-page">Список услуг</h1>
@@ -18,9 +19,14 @@
 				</select>
 				выбрать тип
 			</label>
+			<div class="search">
+				<input type="text" class="search__input" placeholder="Поиск" id="search-input">
+				<div class="search__img"><img src="./img/search-icon.png" alt="search"></div>
+				
+			</div>
 			<div class="table__wrapper">
 				<table id="table" class="table">
-					<thead>
+					<thead class="thead">
 					<tr>
 						<th class="table-th th-id">ID<span class="svg_ui"><svg class="icon-sort"><use xlink:href="./img/sprite.svg#sorting"></use></svg></span>
 						</th>
@@ -28,7 +34,7 @@
 						</th>
 						<th class="table-th th-name">Виды работ<span class="svg_ui"><svg class="icon-sort"><use xlink:href="./img/sprite.svg#sorting"></use></svg></span>
 						</th>
-						<th class="table-th th-units">Еденицы измерения<span class="svg_ui"><svg class="icon-sort"><use xlink:href="./img/sprite.svg#sorting"></use></svg></span>
+						<th class="table-th th-units">Единицы измерения<span class="svg_ui"><svg class="icon-sort"><use xlink:href="./img/sprite.svg#sorting"></use></svg></span>
 						</th>
 						<th class="table-th th-cost">Цена за единицу</th>
 						<th class="table-th th-handler">Действия</th>

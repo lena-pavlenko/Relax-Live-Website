@@ -45,14 +45,14 @@ export class ItemService {
         return fetch(`http://localhost:4545/items/?type=${value}`).then(res => res.json())
     }
 
-    // // Сортируем данные
-    // sortItems(option) {
-    //     return fetch(`http://localhost:4545/items/?_sort=${option.name}&_order=${option.value}`).then(res => res.json())
-    // }
+    // Сортируем данные
+    sortItems(option) {
+        return fetch(`http://localhost:4545/items/?_sort=${option.name}&_order=${option.value}`).then(res => res.json())
+    }
 
-    // // Поиск данных
-    // searchItems(str) {
-    //     return fetch(`http://localhost:4545/items/?name_like=${str}`).then(res => res.json())
-    // }
+    // Поиск данных
+    searchItems(str) {
+        return fetch(`http://localhost:4545/items/?q=${str}`).then(res => res.json())
+    }
 
 }

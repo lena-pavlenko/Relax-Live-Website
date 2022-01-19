@@ -4,14 +4,20 @@ const getSelect = () => {
     const select = document.getElementById('typeItem');
     let option;
     let arr = [];
-    
+
     itemService.getItems().then(data => {
         for (let i = 0; i < data.length; i++){
-            if (i > 0){
-                if (data[i].type !== data[i - 1].type){
-                    arr.push(data[i]);
+            let flag = false;
+            if (arr.length > 0) {
+                for (let j = 0; j < arr.length; j++) {
+                    if (data[i].type === arr[j].type) {
+                        flag = true;
+                        break;
+                    }
                 }
-            } else {
+            }
+
+            if (flag === false) {
                 arr.push(data[i]);
             }
         }
@@ -20,7 +26,7 @@ const getSelect = () => {
             option.textContent = item.type;
             select.options[index].after(option)
         });
-    })
+    }).catch(error => console.log(error.message))
 }
 
 export default getSelect;

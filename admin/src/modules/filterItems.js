@@ -19,7 +19,7 @@ const filterItems = () => {
                 }
             });
             
-        })
+        }).catch(error => console.log(error.message))
     }) 
 }
 

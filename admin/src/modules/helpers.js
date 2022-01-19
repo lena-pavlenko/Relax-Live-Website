@@ -20,4 +20,4 @@ const validity = (input, reg) => {
     })
 }
 
-export {validity};
+export { validity, debounce };

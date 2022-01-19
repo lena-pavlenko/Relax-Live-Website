@@ -11,11 +11,11 @@ const render = (items) => {
         // Вставляем в таблицу строки с юзерами
         tBody.insertAdjacentHTML('beforeend', `
             <tr class="table__row" data-key="${item.id}">
-                <td class="table__id table__cell">${item.id}</td>
-                <td class="table-type table__cell">${item.type}</td>
-                <td class="table-name table__cell">${item.name}</td>
-                <td class="table-units table__cell">${item.units}</td>
-                <td class="table-cost table__cell">${item.cost}</td>
+                <td class="table__id table__cell table__id">${item.id}</td>
+                <td class="table-type table__cell table__type">${item.type}</td>
+                <td class="table-name table__cell table__name">${item.name}</td>
+                <td class="table-units table__cell table__units">${item.units}</td>
+                <td class="table-cost table__cell table__cost">${item.cost}</td>
                 <td>
                     <div class="table__actions table__cell">
                         <button class="button action-change"><span class="svg_ui"><svg class="action-icon_change"><use xlink:href="./img/sprite.svg#change"></use></svg></span><span>Изменить</span>

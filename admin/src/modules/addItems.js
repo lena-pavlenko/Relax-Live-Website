@@ -55,9 +55,9 @@ const addItems = () => {
                 units: inputUnits.value.trim(),
                 cost: +inputCost.value
             }
-
             // Вызываем метод, передаем создаваемый объект, перерисовываем таблицу
             itemService.addItems(item).then(() => {
+                
                 itemService.getItems().then(items => {
                     render(items);
                     form.reset();
@@ -65,7 +65,7 @@ const addItems = () => {
                         modal.style.display = '';
                     }, 700)
                 }).catch(error => {
-                    console.log(error.message)
+                    console.log(error.message);
                 })
             })
         }

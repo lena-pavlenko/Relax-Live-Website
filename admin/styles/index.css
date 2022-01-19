@@ -76,6 +76,17 @@ body {
     margin: 3px;
 }
 
+.rotate{
+    transform: rotate(180deg);
+}
+.loader{
+    display: none;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
 .svg__loader {
     margin: 90px;
     width: 80px;
@@ -90,8 +101,25 @@ body {
         transform:rotate(360deg);
     }
 }
-
-
+.search{
+    margin: 40px 0;
+    display: flex;
+}
+.search__input{
+    width: 240px;
+    height: 30px;
+    padding: 10px;
+}
+.search__img{
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    background: #d9d4d4;
+    border: 1px solid #bab8b8;
+    border-left: none;
+}
 
 
 .text__center {
@@ -460,11 +488,29 @@ body {
 .tbody {
     background-color: white;
     border-collapse: collapse;
+    display: block;
+    width: 100%;
+    height: 500px;
+    overflow: scroll;
 }
 
 .table__row {
     height: 60px;
     border-bottom: 1px solid var(--grey_color);
+    display: flex;
+    width: 100%;
+}
+.table__name{
+    width: 300px;
+}
+.table__type{
+    width: 250px;
+}
+.table__units{
+    width: 135px;
+}
+.table__cost{
+    width: 115px;
 }
 
 .table__date span:last-child {
@@ -486,6 +532,7 @@ body {
 .table__id {
     font-size: 12px;
     color: var(--txt_grey);
+    width: 110px;
 }
 
 
@@ -512,6 +559,9 @@ body {
     margin: 0 auto;
     color: red;
     text-align: center;
+}
+.thead {
+    display: block;
 }
 
 @media screen and (max-width: 1200px) {
