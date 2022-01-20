@@ -1,11 +1,20 @@
+import {inputNameValidate} from "./helper";
+
 const sendForm = (forms = document.querySelectorAll('form')) => {
 
     const modal = document.querySelector('.popup-thank');
     const errorModal = document.querySelector('.popup-error');
+    const inputs = document.querySelectorAll('input');
 
     modal.addEventListener('click', (e) => {
         if (e.target.closest('.close') || !e.target.closest('.feedback-wrap')) {
             modal.style.visibility = 'hidden';
+        }
+    })
+
+    inputs.forEach(input => {
+        if (input.name === 'name') {
+            inputNameValidate(input, /[^а-яА-яa-z\-\ ]/gi)
         }
     })
 

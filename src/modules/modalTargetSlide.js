@@ -16,9 +16,16 @@ const modalTargetSlide = (
     const modal = document.querySelector(modalClass);
     const sliderSection = document.querySelector(sliderWrapClass);
     const sliderWrap = sliderSection.querySelector(sliderClass);
+    const slidesModal = modal.querySelectorAll(slideModalClass);
 
     let sliderStart = false;
     let texts;
+    let text = false;
+    if (info === true) {
+       text = true;
+    }
+
+    
 
     sliderWrap.addEventListener('click', (e) => {
         if (e.target.closest(slideClass)) {
@@ -45,7 +52,7 @@ const modalTargetSlide = (
                     for (let i = 0; i < texts.length; i++){
                         texts[i].setAttribute('data-portfolio-text', i+1);
                         texts[i].style.display = 'none';
-                        
+                        texts[i].classList.remove('portfolio-active');
                     }
                 }
                 // photos[i].classList.remove('portfolio-active');
@@ -57,7 +64,6 @@ const modalTargetSlide = (
                 if (info === true) {
                     texts[slideNumber-1].classList.add('portfolio-active');
                 }
-                
                 slider(
                     modalSliderWrapClass, 
                     slideModalClass, 
@@ -67,9 +73,10 @@ const modalTargetSlide = (
                     navRightId, 
                     true, 
                     modalSliderClass,
+                    text,
                     slideNumber-1);
                     
-                sliderStart = true;
+                // sliderStart = true;
             }
             
             modal.classList.add('show-popup');
@@ -79,6 +86,7 @@ const modalTargetSlide = (
     modal.addEventListener('click', (e) => {
         if (e.target.closest('.close') || !e.target.closest('.popup-dialog-slider')) {
             modal.classList.remove('show-popup');
+            
         }
     })
 }

@@ -7,6 +7,7 @@ const slider = (
         navRightId, 
         pagination = false,
         sliderCurrentClass,
+        info = false,
         sliderIndex = 0
     ) => {
 
@@ -14,7 +15,12 @@ const slider = (
     const sliderBlock = document.querySelector(sliderClass);
     const sliderCurrent = document.querySelector(sliderCurrentClass);
     const sliderItems = sliderCurrent.querySelectorAll(slidesClass);
-    let pageAll, pageCurrent, sliderPage;
+    const modal = document.querySelector('.popup-portfolio');
+    let pageAll, pageCurrent, sliderPage, texts, slideNumber;
+
+    if (info == true) {
+        texts = modal.querySelectorAll('.popup-portfolio-text');
+    }
 
     if (pagination === true) {
         pageAll = sliderBlock.querySelector('.slider-counter-content__total');
@@ -65,6 +71,19 @@ const slider = (
                 }
                 pageCurrent.textContent = sliderPage
             }
+
+            if (info === true) {
+                for (let i = 0; i < texts.length; i++){
+                    texts[i].setAttribute('data-portfolio-text', i+1);
+                    texts[i].style.display = 'none';
+                    texts[i].classList.remove('portfolio-active');
+                }
+            }
+            if (info === true) {
+                slideNumber = pageCurrent.textContent
+                texts[slideNumber-1].classList.add('portfolio-active');
+            }
+
         } else if (e.target.closest(navLeftId)) {
             sliderIndex--;
 
@@ -74,6 +93,18 @@ const slider = (
                     sliderPage = sliderItems.length;
                 }
                 pageCurrent.textContent = sliderPage;
+            }
+
+            if (info === true) {
+                for (let i = 0; i < texts.length; i++){
+                    texts[i].setAttribute('data-portfolio-text', i+1);
+                    texts[i].style.display = 'none';
+                    texts[i].classList.remove('portfolio-active');
+                }
+            }
+            if (info === true) {
+                slideNumber = pageCurrent.textContent
+                texts[slideNumber-1].classList.add('portfolio-active');
             }
         }
 

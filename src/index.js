@@ -62,8 +62,9 @@ slider(
        'active', 
        '#reviews-arrow_left', 
        '#reviews-arrow_right', 
-       false, 
-       '.reviews-slider');
+       false,
+       '.reviews-slider',
+       false);
 
 slider(
        '.transparency-slider-wrap', 
@@ -73,7 +74,8 @@ slider(
        '#transparency-arrow_left', 
        '#transparency-arrow_right', 
        false, 
-       '.transparency-slider');
+       '.transparency-slider',
+       false);
        
 
 sliderCarousel(
@@ -97,6 +99,21 @@ if (window.screen.width < 575) {
            '#portfolio-arrow-mobile_left', 
            '#portfolio-arrow-mobile_right', 
            true, 
-           '.portfolio-slider-mobile');
+           '.portfolio-slider-mobile',
+           false);
+
+           modalTargetSlide(
+              '.popup-portfolio', 
+              '.portfolio-slider-wrap', 
+              '.portfolio-slider-mobile', 
+              '.portfolio-slider__slide-frame-mob', 
+              '.popup-portfolio-slider__slide',
+              true,
+              '.popup-portfolio-slider-wrap',
+              '.popup-portfolio-slider',
+              '.popup-arrow',
+              '#popup_portfolio_left', 
+              '#popup_portfolio_right'
+              );
 }
 

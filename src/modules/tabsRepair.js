@@ -33,7 +33,7 @@ const tabsRepair = () => {
                     sliderEl.classList.add('repair-active');
                     slider('.repair-types-slider-wrap', '.repair-types-slider__slide', 
                             '.slider-arrow', 'active', '#repair-types-arrow_left', 
-                            '#repair-types-arrow_right', true, `.${id}`);
+                            '#repair-types-arrow_right', true, `.${id}`, false);
                 }
             })
             

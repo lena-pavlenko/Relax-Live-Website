@@ -40,5 +40,10 @@ function maskPhone() {
         }
     }
 }
+const inputNameValidate = function(myInput, reg) {
+    myInput.addEventListener('input', (e) => {
+        e.target.value = e.target.value.replace(reg, '');
+    })
+}
 
-export { scrollSmooth, maskPhone }
+export { scrollSmooth, maskPhone, inputNameValidate }

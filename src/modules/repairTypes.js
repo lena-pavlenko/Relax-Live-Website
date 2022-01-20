@@ -23,18 +23,39 @@ const repairTypes = () => {
             return arrTypes;
         })
     }
-
+    let arr = [];
+    
     const renderBtn = (arrBtns) => {
-        buttonWrapper.innerHTML = '';
+        // buttonWrapper.innerHTML = '';
         
-        arrBtns.forEach((data, index) => {
-            if (index > 0){
-                if (arrBtns[index-1].type === data.type){
-                    return;
+        // arrBtns.forEach((data, index) => {
+        //     if (index > 0){
+        //         if (arrBtns[index-1].type === data.type){
+        //             return;
+        //         }
+        //     }
+        //     buttonWrapper.innerHTML += `<button class="button_o popup-repair-types-nav__item swiper-slide" value="${data.type}">${data.type}</button>`;
+        // })
+        
+        for (let i = 0; i < arrBtns.length; i++){
+            let flag = false;
+            if (arr.length > 0) {
+                for (let j = 0; j < arr.length; j++) {
+                    if (arrBtns[i].type === arr[j].type) {
+                        flag = true;
+                        break;
+                    }
                 }
             }
-            buttonWrapper.innerHTML += `<button class="button_o popup-repair-types-nav__item swiper-slide" value="${data.type}">${data.type}</button>`;
-        })
+
+            if (flag === false) {
+                arr.push(arrBtns[i]);
+            }
+        }
+        buttonWrapper.innerHTML = '';
+        arr.forEach((item) => {
+            buttonWrapper.innerHTML += `<button class="button_o popup-repair-types-nav__item swiper-slide" value="${item.type}">${item.type}</button>`;
+        });
         buttons = buttonWrapper.querySelectorAll('.popup-repair-types-nav__item');
 
         if (window.screen.width < 1200) {
