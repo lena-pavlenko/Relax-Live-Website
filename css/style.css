@@ -6064,6 +6064,9 @@ div.wave-block:nth-child(17):after {
     position: relative;
     height: 100%;
 }
+.row-height{
+    height: 100%;
+}
 
 @media (max-width: 1024px) {
     .popup-portfolio-slider {

@@ -1,3 +1,4 @@
+// Слайдер
 const slider = (
         sliderClass, 
         slidesClass, 
@@ -16,12 +17,16 @@ const slider = (
     const sliderCurrent = document.querySelector(sliderCurrentClass);
     const sliderItems = sliderCurrent.querySelectorAll(slidesClass);
     const modal = document.querySelector('.popup-portfolio');
+
+    // Объявление переменных
     let pageAll, pageCurrent, sliderPage, texts, slideNumber;
 
+    // Если есть текстовая информация
     if (info == true) {
         texts = modal.querySelectorAll('.popup-portfolio-text');
     }
 
+    // Если есть пагинация
     if (pagination === true) {
         pageAll = sliderBlock.querySelector('.slider-counter-content__total');
         pageCurrent = sliderBlock.querySelector('.slider-counter-content__current');
@@ -60,10 +65,11 @@ const slider = (
         // Удаляем активные классы
         prevSlide(sliderItems, sliderIndex, activeClass);
 
-        // Проверяем клик
+        // Проверяем клик Вправо
         if (e.target.closest(navRightId)) {
             sliderIndex++;
 
+            // Меняем номер текущего слайда в пагинации
             if (pagination === true) {
                 sliderPage++;
                 if (sliderPage > sliderItems.length) {
@@ -72,6 +78,7 @@ const slider = (
                 pageCurrent.textContent = sliderPage
             }
 
+            // Меняем текст, если он есть
             if (info === true) {
                 for (let i = 0; i < texts.length; i++){
                     texts[i].setAttribute('data-portfolio-text', i+1);
@@ -84,9 +91,11 @@ const slider = (
                 texts[slideNumber-1].classList.add('portfolio-active');
             }
 
+        // Проверяем клик Влево
         } else if (e.target.closest(navLeftId)) {
             sliderIndex--;
 
+            // Меняем номер текущего слайда в пагинации
             if (pagination === true) {
                 sliderPage--;
                 if (sliderPage <= 0) {
@@ -95,6 +104,7 @@ const slider = (
                 pageCurrent.textContent = sliderPage;
             }
 
+            // Меняем текст, если он есть
             if (info === true) {
                 for (let i = 0; i < texts.length; i++){
                     texts[i].setAttribute('data-portfolio-text', i+1);

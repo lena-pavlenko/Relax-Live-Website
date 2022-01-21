@@ -9,6 +9,7 @@ const scrollSmooth = (anchor) => {
     })
 }
 
+// Маска для телефона
 function maskPhone() { 
     const eventCalllback = function (e) {
  
@@ -40,6 +41,8 @@ function maskPhone() {
         }
     }
 }
+
+// Валидация для инпута Имя
 const inputNameValidate = function(myInput, reg) {
     myInput.addEventListener('input', (e) => {
         e.target.value = e.target.value.replace(reg, '');

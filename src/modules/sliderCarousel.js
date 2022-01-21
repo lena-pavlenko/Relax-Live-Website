@@ -1,17 +1,20 @@
+// Слайдер-карусель
 const sliderCarousel = (sliderSectionClass, sliderWrapperClass, sliderBlockClass, slidesClass, navLeftId, navRightId) => {
 
+    // Получаем элементы
     const sliderSection = document.querySelector(sliderSectionClass);
     const sliderWrap = sliderSection.querySelector(sliderWrapperClass);
     const sliderBlock = sliderWrap.querySelector(sliderBlockClass);
     const elements = sliderBlock.querySelectorAll(slidesClass);
     
+    // Объявляем переменные
     let leftBtn, rightBtn;
 
-    //config data
-    let width = elements[0].offsetWidth;
-    let count = 3;
-    let position = 0;
+    let width = elements[0].offsetWidth; // Узнаем ширину слайда
+    let count = 3; // Количество отображаемых слайдов
+    let position = 0; // Начальная позиция
     
+    // Адаптив
     if (window.screen.width < 1024) {
         count = 1;
     }
